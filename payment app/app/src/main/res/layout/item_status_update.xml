@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/statusIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="Status Icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_check_circle" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toStartOf="@+id/statusTime"
+        app:layout_constraintStart_toEndOf="@+id/statusIcon"
+        app:layout_constraintTop_toTopOf="@+id/statusIcon"
+        tools:text="Transaction submitted to blockchain" />
+
+    <TextView
+        android:id="@+id/statusTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/statusText"
+        tools:text="12:34 PM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

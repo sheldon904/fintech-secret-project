@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Crypto Payment</string>
+    <string name="wallet_balance">Wallet Balance</string>
+    <string name="make_payment">Make Payment</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="select_crypto">Select Cryptocurrency</string>
+    <string name="ethereum">Ethereum</string>
+    <string name="confirm_payment">Confirm Payment</string>
+    <string name="payment_amount">Payment Amount</string>
+    <string name="merchant">Merchant</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="usd_equivalent">USD Equivalent</string>
+    <string name="crypto_amount">Crypto Amount</string>
+    <string name="exchange_rate">Exchange Rate</string>
+    <string name="transaction_status">Transaction Status</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="processing">Processing Payment…</string>
+    <string name="settlement_status">Settlement Status</string>
+    <string name="merchant_notification">Merchant Notification</string>
+    <string name="payment_successful">Payment Successful</string>
+    <string name="tap_to_pay">Tap to Pay</string>
+    <string name="connecting_to_terminal">Connecting to Terminal</string>
+</resources>

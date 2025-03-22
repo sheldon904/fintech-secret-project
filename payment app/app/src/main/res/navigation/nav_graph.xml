@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/walletFragment">
+
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.cryptopayment.ui.WalletFragment"
+        android:label="Wallet"
+        tools:layout="@layout/fragment_wallet">
+        <action
+            android:id="@+id/action_walletFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.cryptopayment.ui.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/action_paymentFragment_to_nfcSimulationFragment"
+            app:destination="@id/nfcSimulationFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nfcSimulationFragment"
+        android:name="com.example.cryptopayment.ui.NfcSimulationFragment"
+        android:label="NFC Payment"
+        tools:layout="@layout/fragment_nfc_simulation">
+        <action
+            android:id="@+id/action_nfcSimulationFragment_to_transactionStatusFragment"
+            app:destination="@id/transactionStatusFragment" />
+        <action
+            android:id="@+id/action_nfcSimulationFragment_to_walletFragment"
+            app:destination="@id/walletFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transactionStatusFragment"
+        android:name="com.example.cryptopayment.ui.TransactionStatusFragment"
+        android:label="Transaction Status"
+        tools:layout="@layout/fragment_transaction_status">
+        <action
+            android:id="@+id/action_transactionStatusFragment_to_walletFragment"
+            app:destination="@id/walletFragment"
+            app:popUpTo="@id/walletFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

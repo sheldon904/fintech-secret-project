@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/transactionStatusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transaction_status"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/transactionDetailsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionStatusLabel">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/transactionIdLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction ID"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/transactionId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/transactionIdLabel"
+                app:layout_constraintTop_toBottomOf="@+id/transactionIdLabel"
+                tools:text="0x8d7f3b92f3c178ccd3e2cea9d225195d22ab10586f22345678fd" />
+
+            <TextView
+                android:id="@+id/merchantInfoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/merchant"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/transactionId"
+                app:layout_constraintTop_toBottomOf="@+id/transactionId" />
+
+            <TextView
+                android:id="@+id/merchantInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/primary_text"
+                app:layout_constraintStart_toStartOf="@+id/merchantInfoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/merchantInfoLabel"
+                tools:text="Coffee Shop" />
+
+            <TextView
+                android:id="@+id/cryptoAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/crypto_amount"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/merchantInfo"
+                app:layout_constraintTop_toBottomOf="@+id/merchantInfo" />
+
+            <TextView
+                android:id="@+id/cryptoAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/cryptoAmountLabel"
+                app:layout_constraintTop_toBottomOf="@+id/cryptoAmountLabel"
+                tools:text="0.015 ETH" />
+
+            <TextView
+                android:id="@+id/usdAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/usd_equivalent"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/cryptoAmount"
+                app:layout_constraintTop_toBottomOf="@+id/cryptoAmount" />
+
+            <TextView
+                android:id="@+id/usdAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/primary_text"
+                app:layout_constraintStart_toStartOf="@+id/usdAmountLabel"
+                app:layout_constraintTop_toBottomOf="@+id/usdAmountLabel"
+                tools:text="$25.75" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/statusUpdateCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/doneButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionDetailsCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/statusUpdatesLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status Updates"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/statusUpdatesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/statusUpdatesLabel"
+                tools:listitem="@layout/item_status_update" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/doneButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Done"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
