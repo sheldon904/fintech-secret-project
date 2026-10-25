@@ -59,7 +59,20 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
-    
+
+    // Security floors for transitive dependencies (CVE sweep 2026-10-24)
+    constraints {
+        implementation('com.google.code.gson:gson:2.8.9') {
+            because 'converter-gson 2.9.0 pulls gson 2.8.5 (GHSA-4jrv-ppp4-jm57)'
+        }
+        implementation('com.squareup.okhttp3:okhttp:4.10.0') {
+            because 'retrofit 2.9.0 pulls okhttp 3.14.9 (GHSA-3cqm-mf7h-prrj)'
+        }
+        implementation('com.squareup.okio:okio:3.4.0') {
+            because 'okhttp 4.10.0 pulls okio 3.0.0 (GHSA-w33c-445m-f8w7)'
+        }
+    }
+
     // Testing libraries
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
